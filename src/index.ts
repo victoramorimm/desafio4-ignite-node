@@ -1,3 +1,5 @@
+/* eslint-disable prettier/prettier */
+
 import express from "express";
 
 import { usersRoutes } from "./routes/users.routes";

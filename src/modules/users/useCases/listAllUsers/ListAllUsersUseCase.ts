@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { User } from "../../model/User";
 import { IUsersRepository } from "../../repositories/IUsersRepository";
 
@@ -9,7 +10,15 @@ class ListAllUsersUseCase {
   constructor(private usersRepository: IUsersRepository) {}
 
   execute({ user_id }: IRequest): User[] {
-    // Complete aqui
+    const user = this.usersRepository.findById(user_id);
+
+    if (user && user.admin === true) {
+      const allUsers = this.usersRepository.list();
+
+      return allUsers;
+    }
+
+    throw new Error("Unauthorized");
   }
 }
 

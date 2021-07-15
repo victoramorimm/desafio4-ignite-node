@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Router } from "express";
 
 import { createUserController } from "../modules/users/useCases/createUser";
